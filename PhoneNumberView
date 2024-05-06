@@ -12,7 +12,7 @@ struct PhoneNumberView: View {
     @Environment(\.colorScheme) var colorScheme
     @FocusState private var keyIsFocused: Bool
     
-    let counrties: [CPData] = Bundle.main.decode("CountryNumbers.json")
+    let countries: [CPData] = Bundle.main.decode("CountryNumbers.json")
     
     var body: some View {
         GeometryReader { geo in
@@ -103,9 +103,9 @@ struct PhoneNumberView: View {
     
     var filteredResorts: [CPData] {
         if searchCountry.isEmpty {
-            return counrties
+            return countries
         } else {
-            return counrties.filter { $0.name.contains(searchCountry) }
+            return countries.filter { $0.name.contains(searchCountry) }
         }
     }
     
